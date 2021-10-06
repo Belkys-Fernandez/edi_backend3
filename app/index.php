@@ -13,13 +13,17 @@ use Slim\Routing\RouteCollectorProxy;
 use Slim\Routing\RouteContext;
 
 require __DIR__ . '/../vendor/autoload.php';
+
 require __DIR__ . '/Acceso_datos/Acceso_datos.php';
 require __DIR__ . '/Controllers/ProductosController.php';
 require __DIR__ . '/Controllers/ProveedoresController.php';
 require __DIR__ . '/Controllers/ContactoController.php';
+require __DIR__ . '/Controllers/UsuariosController.php';
+
 require __DIR__ . '/Entidades/Productos.php';
 require __DIR__ . '/Entidades/Proveedores.php';
 require __DIR__ . '/Entidades/Contacto.php';
+require __DIR__ . '/Entidades/Usuarios.php';
 
 use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable('../');
@@ -46,8 +50,8 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
 
 //request respuesta al front, front por array:datos suelto
 
-$app->get('/',function(Request $request, Response $response, array $args) { 
-    $response->getBody()->write("Bienvenido a Vida Saludable");
+$app->get('/Bienvenido',function(Request $request, Response $response, array $args) { 
+    $response->getBody()->write("APP Vida Saludable");
     return $response;
 });
 
