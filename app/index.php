@@ -53,7 +53,7 @@ $app->get('/',function(Request $request, Response $response, array $args) {
 });
 
 $app->group('/Productos', function (RouteCollectorProxy $group){
-   $group->get('[/]',\ProductosController::class.':retornarListaProductos');
+  // $group->get('[/]',\ProductosController::class.':retornarListaProductos');
     $group->get('/listaProducto',\ProductosController::class.':retornarListaProductos');
     $group->get('/ProductosPorId/{Id}',\ProductosController::class.':retornarProductosPorId');
     //verificar con el prof.
