@@ -47,7 +47,7 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
 
 //request respuesta al front, front por array:datos suelto
 
-$app->get('/Bienvenido',function(Request $request, Response $response, array $args) { 
+$app->get('/',function(Request $request, Response $response, array $args) { 
     $response->getBody()->write("APP Vida Saludable");
     return $response;
 });
