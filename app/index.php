@@ -15,14 +15,11 @@ use Slim\Routing\RouteContext;
 require __DIR__ . '/../vendor/autoload.php';
 
 require __DIR__ . '/Acceso_datos/Acceso_datos.php';
+
 require __DIR__ . '/Controllers/ProductosController.php';
-
-
 require __DIR__ . '/Controllers/UsuariosController.php';
 
 require __DIR__ . '/Entidades/Productos.php';
-
-
 require __DIR__ . '/Entidades/Usuarios.php';
 
 use Dotenv\Dotenv;
@@ -68,12 +65,6 @@ $app->group('/Productos', function (RouteCollectorProxy $group){
 });
 
 
-$app->group('/Contacto', function (RouteCollectorProxy $group){
-
-    $group->get('/listaContactos',\ProductosController::class.':retornarListaContacto');
-
-
-});
 
 
 
