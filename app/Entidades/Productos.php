@@ -1,12 +1,11 @@
 <?php
- class productos{
+ class Productos{
 
 public $id_producto;
+public $nombre;
 public $categoria;
+public $precio;
 public $presentacion;
-
-public $descripcion;
-public $valor;
 
 
 public static  function buscarListaProductos(){
@@ -44,21 +43,7 @@ $consulta=$accesoDatos->prepararConsulta("SELECT * FROM productos WHERE id_produ
     return $consulta->fetchAll(PDO::FETCH_CLASS,'Productos'); 
 }
 
-
-
-
-
-
-
-
-
-
 }
-
-
-
-
-
 
 
 ?>

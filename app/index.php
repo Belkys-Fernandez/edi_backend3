@@ -67,11 +67,10 @@ $app->group('/Productos', function (RouteCollectorProxy $group){
    
 });
 
+
 $app->group('/Contacto', function (RouteCollectorProxy $group){
 
     $group->get('/listaContactos',\ProductosController::class.':retornarListaContacto');
-
-
 
 
 });
