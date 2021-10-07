@@ -64,7 +64,7 @@ $app->group('/Productos', function (RouteCollectorProxy $group){
    
 });
 
-
+$app->run();
 
 
 
