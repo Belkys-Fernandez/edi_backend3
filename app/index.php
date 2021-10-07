@@ -17,12 +17,12 @@ require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/Acceso_datos/Acceso_datos.php';
 require __DIR__ . '/Controllers/ProductosController.php';
 
-require __DIR__ . '/Controllers/ContactoController.php';
+
 require __DIR__ . '/Controllers/UsuariosController.php';
 
 require __DIR__ . '/Entidades/Productos.php';
 
-require __DIR__ . '/Entidades/Contacto.php';
+
 require __DIR__ . '/Entidades/Usuarios.php';
 
 use Dotenv\Dotenv;
