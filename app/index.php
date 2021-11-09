@@ -53,7 +53,7 @@ $app->get('/',function(Request $request, Response $response, array $args) {
 });
 
 $app->group('/Productos', function (RouteCollectorProxy $group){
-  // $group->get('[/]',\ProductosController::class.':retornarListaProductos');
+  // $group->get('[/]',\ProductosController::class.':retornarListausuario');
     $group->get('/listaProducto',\ProductosController::class.':retornarListaProductos');
     $group->get('/ProductosPorId/{Id}',\ProductosController::class.':retornarProductosPorId');
     //verificar con el prof.
@@ -63,6 +63,17 @@ $app->group('/Productos', function (RouteCollectorProxy $group){
     
    
 });
+$app->group('/Usuarios', function (RouteCollectorProxy $group){
+     $group->get('[/]',\UsuariosController::class.':retornarListaUsuarios);
+      $group->get('/listaUsuario',\UsuariosController::class.':retornarListaUsuario');
+      $group->get('/UsuarioPorId/{Id}',\UsuariosController::class.':retornarUsuarioPorId');
+      //verificar con el prof.
+      $group->post('/descripcionUsuario',\UsuariosController::class.':retornarUsuarioDescripcion');
+      $group->delete('/borrarUsuario',\UsuariosController::class.':retornarEliminacion');
+      $group->post('/actualizarUsuario',\UsuariosController::class.':retornarActualizacion');
+      
+     
+  });
 
 $app->run();
 
