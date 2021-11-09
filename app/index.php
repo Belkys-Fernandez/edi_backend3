@@ -70,16 +70,10 @@ $app->group('/Usuarios', function (RouteCollectorProxy $group){
       $group->get('/UsuarioPorId/{Id}',\UsuariosController::class.':retornarUsuarioPorId');
    
       $group->post('/descripcionUsuario',\UsuariosController::class.':retornarUsuarioDescripcion');
-      $group->delete('/borrarUsuario',\UsuariosController::class.':retornarEliminacion');
-      $group->post('/actualizarUsuario',\UsuariosController::class.':retornarActualizacion');
-      
-     
+    
     });
 
-$app->run();
-
-
-
+     $app->run();
 
 
 ?>
