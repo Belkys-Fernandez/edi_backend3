@@ -1,7 +1,7 @@
 <?php
 
 
-    class usuarioController{
+    class usuarioControllerex{
 
         public static function retornarListaUsuario($request,$response,$args){
             $listaUsuario=Usuarios::buscarListaUsuario();
@@ -21,7 +21,7 @@
             $json = $request->getBody();
             $json_id = json_decode($json,true);
             $onjetoUsuario=new Usuarios;
-            $descripcionUsuario=$onjetoUsuario->buscarDescripcionUsuario($json_id['nombreusuario']);
+            $descripcionUsuario=$onjetoUsuario->buscarDescripcionUsuario($json_id['usuario']);
             $response->getBody()->write(json_encode($descripcionUsuario));
             return $response;
         }
@@ -30,7 +30,7 @@
             $json = $request->getBody();
             $json_id = json_decode($json,true);
             $onjetoUsuario=new Usuarios;
-            $descripcionUsuario=$onjetoUsuario->buscarEliminar($json_id['nombreusuario']);
+            $descripcionUsuario=$onjetoUsuario->buscarEliminar($json_id['usuario']);
             $response->getBody()->write(json_encode($descripcionUsuario));
             return $response;
         }
@@ -38,7 +38,7 @@
             $json = $request->getBody();
             $json_id = json_decode($json,true);
             $onjetoUsuario=new Usuarios;
-            $descripcionUsuario=$onjetoUsuario->buscarActualizacion($json_id['nombreusuario']);
+            $descripcionUsuario=$onjetoUsuario->buscarActualizacion($json_id['usuario']);
             $response->getBody()->write(json_encode($descripcionUsuario));
             return $response;
         }

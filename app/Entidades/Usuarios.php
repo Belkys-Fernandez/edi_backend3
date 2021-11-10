@@ -2,10 +2,10 @@
 
     class Usuarios{
 
-        public $NombreUsuario;
-        public $Email;
-        public $Contra;
-        public $Tipo;
+        public $usuario;
+        public $nombre;
+        public $apellido;
+        public $sexo;
 
        
       
@@ -17,23 +17,23 @@
             return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios'); 
         }
         
-        public function buscarUsuarioPorId($nombreusuario){
+        public function buscarUsuarioPorId($usuario){
             $accesoDatos=Acceso_datos::obtenerConexionBD();
-            $consulta=$accesoDatos->prepararConsulta("SELECT * FROM usuario WHERE nombreusuario= $nombreusuario"  );
+            $consulta=$accesoDatos->prepararConsulta("SELECT * FROM usuario WHERE usuario= $usuario"  );
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios'); 
         }
         
-        public function buscarDescripcionUsuario($nombreusuario){
+        public function buscarDescripcionUsuario($usuario){
             $accesoDatos=Acceso_datos::obtenerConexionBD();
-            $consulta=$accesoDatos->prepararConsulta("SELECT contra FROM usuario WHERE nombreusuario= $nombreusuario "  );
+            $consulta=$accesoDatos->prepararConsulta("SELECT contra FROM usuario WHERE usuario= $usuario "  );
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios'); 
         }
         
-        public function buscarEliminar($nombreusuario){
+        public function buscarEliminar($usuario){
             $accesoDatos=Acceso_datos::obtenerConexionBD();
-             $consulta=$accesoDatos->prepararConsulta("DELETE FROM usuario WHERE nombreusuario= $nombreusuario "  );
+             $consulta=$accesoDatos->prepararConsulta("DELETE FROM usuario WHERE usuario= $usuario "  );
             $consulta->execute();
             return $consulta->fetchAll(PDO::FETCH_CLASS,'Usuarios'); 
         }
