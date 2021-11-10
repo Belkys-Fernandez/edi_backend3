@@ -15,7 +15,7 @@ public static  function buscarListaProductos(){
     return $consulta->fetchAll(PDO::FETCH_CLASS,'Productos'); 
 }
 
-public function buscarProductosPorId($id_producto){
+public function buscarProductosPorId($nombre){
     $accesoDatos=Acceso_datos::obtenerConexionBD();
     $consulta=$accesoDatos->prepararConsulta("SELECT * FROM productos WHERE id_producto= $id_producto "  );
     $consulta->execute();

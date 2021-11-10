@@ -45,7 +45,7 @@ $app->add(function (Request $request, RequestHandlerInterface $handler): Respons
 
 //<<Rutas>>
 
-//request respuesta al front, front por array:datos suelto
+
 
 $app->get('/',function(Request $request, Response $response, array $args) { 
     $response->getBody()->write("APP Vida Saludable");
@@ -63,8 +63,7 @@ $app->group('/Productos', function (RouteCollectorProxy $group){
     
    
 });
-
-$app->group('/Usuarios', function (RouteCollectorProxy $group){
+$app->gt  {
       $group->get('/listaUsuario',\UsuariosController::class.':retornarListaUsuario');
       $group->get('/UsuarioPorId/{Id}',\UsuariosController::class.':retornarUsuarioPorId');
    
